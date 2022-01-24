@@ -1,0 +1,72 @@
+ul img{
+    width: 100px;
+    height: 80px;
+}
+body{
+    background-color: #ff9100;
+}
+.navBar{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+ul {
+    display: flex;
+    background-color:rgba(236, 235, 235, 0.877);
+    position: sticky;
+    justify-content: flex-end;
+    margin: 0px ;
+    padding-right:200px ;
+}
+
+ul li{
+    list-style: none;
+    margin:15px 50px 0px 0px;
+    padding-bottom: 25px;
+    
+}
+
+ul li a{
+    text-decoration: none;
+    color: #ff9100;
+    border-left: #ff9100 3px solid;
+    margin-left: 8px;
+    padding-left:5px ;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+ul input{
+    justify-content: center;
+    margin:15px 100px 0px 150px;
+    height: 35px;
+    width: 600px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.log{
+    margin-left: 80px;
+}
+
+ul li a:hover{
+    color: grey;
+    border-left: grey 3px solid;
+
+}
+
+.subMenu{
+    margin-top: 10px;
+    display: none;
+    z-index: 99999;
+    position: absolute;
+    text-align: left;
+    width: 180px;
+}
+
+.botonSub:hover > ul{
+    display: block;
+}
+
+.subMenu li{
+    width: 150px;
+}
