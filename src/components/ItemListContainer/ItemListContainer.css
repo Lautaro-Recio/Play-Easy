@@ -1,0 +1,33 @@
+.cards{
+    height: 350px;
+    width: 23%;
+    background-color: burlywood;
+    border: 3px solid black;
+    border-radius: 15px ;
+    margin: 15px;
+    text-align: center;
+}
+.imgsProds{
+    width: 150px;
+    height: 150px;
+    margin: 0px 15px 15px 15px;
+    border: 3px solid blue;
+}
+.cards p{
+    margin: 15px;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+.cards button{
+    background-color: sienna;
+    border-radius: 15px;
+    height: 40px;
+    width: 200px;
+}
+.logo{
+    width: 150px;
+    height: 30px;
+    border: 3px solid blue;
+    background-color: blue;
+}

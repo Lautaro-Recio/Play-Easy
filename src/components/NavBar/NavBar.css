@@ -54,6 +54,11 @@ ul li a:hover{
 
 }
 
+
+
+.botonSub:hover > ul{
+    display: block;
+}
 .subMenu{
     margin-top: 10px;
     display: none;
@@ -61,12 +66,4 @@ ul li a:hover{
     position: absolute;
     text-align: left;
     width: 180px;
-}
-
-.botonSub:hover > ul{
-    display: block;
-}
-
-.subMenu li{
-    width: 150px;
 }
