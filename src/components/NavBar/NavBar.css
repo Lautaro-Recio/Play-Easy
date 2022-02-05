@@ -2,9 +2,7 @@ ul img{
     width: 100px;
     height: 80px;
 }
-body{
-    background-color: #ff9100;
-}
+
 .navBar{
     margin-left: 0px;
     margin-right: 0px;
@@ -17,6 +15,7 @@ ul {
     justify-content: flex-end;
     margin: 0px ;
     padding-right:200px ;
+    z-index: 9999999;
 }
 
 ul li{

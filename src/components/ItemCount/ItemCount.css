@@ -3,13 +3,21 @@
     justify-content: center;
 }
 .contador button{
-    background-color: darkcyan;
+    background-color: #ff9100;
     font-weight: bold;
     font-size: 21px;
     height: 40px;
     width: 40px;
     margin: 5px 0px;
+    border-radius: 15px;
 }
+.contador button:hover{
+    transition: 0,5s;
+    background-color: #7fff00;
+    color: black;
+    box-shadow: 0px 0px 40px #7fff00;
+}
+
 .contador p{
     margin: 5px 5px;
     width: 150px;

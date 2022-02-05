@@ -1,6 +1,8 @@
 .divCards{
   display: flex;
-  background-color: sienna;
   margin-top: 25px;
-  border: black solid 3px;
+  padding: 15px;
+}
+body{
+  background-color: #1c003b;
 }

@@ -1,4 +1,4 @@
-
+import './SubMenu.css'
     export default function SubMenu(){
         return(
             <ul className='subMenu'>

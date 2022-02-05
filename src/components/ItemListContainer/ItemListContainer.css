@@ -1,33 +1,51 @@
-.cards{
-    height: 400px;
-    width: 23%;
-    background-color: burlywood;
-    border: 3px solid black;
-    border-radius: 15px ;
-    margin: 15px;
-    text-align: center;
+.loader{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid;
+    border-color: #7fff00 #0d295e;
+    animation: 2s spin infinite;
 }
-.imgsProds{
-    width: 150px;
-    height: 150px;
-    margin: 0px 15px 15px 15px;
-    border: 3px solid blue;
+@keyframes spin {
+    to{
+        transform: rotate(360deg);
+    }
 }
-.cards p{
-    margin: 15px;
-    font-size: 18px;
-    font-weight: 500;
+.box{
+    position: relative;
+	margin: 2% auto 0;
+	width: 70%;
+	height: auto;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #000, #323232); 
+}
+.glowing::before, .glowing::after{
+    content: '';
+	position: absolute;
+	left: -5px;
+	top: -5px;
+	background: linear-gradient(120deg, #79fb00, #8d01a0, #031ba5,#ff004c,  
+	#e6036d);
+	background-size: 400%;
+	width: calc(100% + 10px);
+	height: calc(100% + 10px);
+	z-index: -1;
+	animation: glower 15s ease infinite; 
+    border-radius: 20px;
+}
 
+@keyframes glower {
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 100% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+    
 }
-.cards button{
-    background-color: sienna;
-    border-radius: 15px;
-    height: 40px;
-    width: 200px;
-}
-.logo{
-    width: 150px;
-    height: 30px;
-    border: 3px solid blue;
-    background-color: blue;
+.divRow h3{
+    color: bisque;
 }
