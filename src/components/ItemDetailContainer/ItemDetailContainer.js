@@ -4,13 +4,13 @@ import '../ItemCount/ItemCount'
 import { getProducts } from '../Arrays/Arrays'
 import '../ItemList/ItemList'
 import ItemDetail from '../ItemDetail/ItemDetail'
-
+import {UseParams} from 'react'
 /* Es Igual que el ItemListContainer solo que con un find */
 function ItemDetailContainer({greetings}){
     const [productos, setDetail] = useState([])
         useEffect(function (){
             getProducts().then(function(products){
-                const detalle = products.find((prodEncontrado) => prodEncontrado.id === 1);
+                const detalle = products.find((prodEncontrado) => prodEncontrado.id);
                 console.log(detalle.length)
                 /* Tengo que pasar el .find como array (con los corchetes para que lo tome) */
                 setDetail([detalle])
