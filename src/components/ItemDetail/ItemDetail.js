@@ -1,39 +1,36 @@
-import Item from "../Item/Item"
+import producto from "../Item/Item"
 import ItemCount from "../ItemCount/ItemCount"
 import {Link} from 'react-router-dom'
-
+import './ItemDetail.css'
 export default function ItemDetail({products}){
     /* Agregar al carrito */
     function addToCart(){
-    
         console.log("se agrego un producto al carrito")
-
     }
-
-    return(
-        <Link to={'/prods/prodId'}>
-        <div  className='col-md-12 divCards'>
-            {
-                products.map(function(producto){
-                    return(
+    console.log(products)
+    
+    return(   
+        products.map(function(producto){
+            console.log(producto)    
+            return(
+                <div  className='col-md-12 divCards'>
+                    <div className="cards">
                         <div>
-                            <div>
-                                <img className='logo' src={Item.console} />
-                                <img className='imgsProds' src={Item.img} alt={Item.title} />
-                            </div>
-
-                            <p>$ {Item.price}</p>
-                            <p>{Item.title}</p>  
-                                
-                            <ItemCount initial={1} stock={10} onAdd={addToCart} />
+                            <img className='logo' src={producto.console} />
+                            <img className='imgsProds' src={producto.img} alt={producto.title} />
                         </div>
+                        <p>$ {producto.price}</p>
+                        <ItemCount initial={1} stock={10} onAdd={addToCart} />
                         
-
-                    )
-                })
-            }
-        </div>
-        </Link>
+                    </div>
+                    <div className="detalle">
+                        <h4>{producto.title}</h4>   
+                        <p>{producto.description}</p>
+                        <p>Edad minima {producto.edad}</p>
+                    </div>
+                </div>
+            )
+        })
 
     )  
 }

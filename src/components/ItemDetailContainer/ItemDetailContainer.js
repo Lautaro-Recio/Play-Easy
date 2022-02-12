@@ -4,27 +4,28 @@ import '../ItemCount/ItemCount'
 import { getProducts } from '../Arrays/Arrays'
 import '../ItemList/ItemList'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import {UseParams} from 'react'
+import { useParams } from 'react-router-dom'
 /* Es Igual que el ItemListContainer solo que con un find */
 function ItemDetailContainer({greetings}){
     const [productos, setDetail] = useState([])
+    const {prodId} = useParams()
         useEffect(function (){
             getProducts().then(function(products){
-                const detalle = products.find((prodEncontrado) => prodEncontrado.id);
-                console.log(detalle.length)
-                /* Tengo que pasar el .find como array (con los corchetes para que lo tome) */
-                setDetail([detalle])
+                console.log(products)
+                const product = products.find((i) =>{
+                    return i.id === Number(prodId)
+                });;
+                console.log(product)
+              setDetail(product)
+
             })
 
-        },[])
-
-
-    
-    
+        },[prodId])
+    console.log(productos)
     return(
         <div className='row '>
             <h3>{greetings}</h3>
-            {productos.length > 0 ? <ItemDetail products={productos}/> : <div className='loader'></div>}
+            {<ItemDetail products={[productos]}/>}
         </div>
     )
     

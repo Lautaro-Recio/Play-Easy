@@ -4,15 +4,26 @@ import '../ItemCount/ItemCount'
 import { getProducts } from '../Arrays/Arrays'
 import '../ItemList/ItemList'
 import ItemList from '../ItemList/ItemList'
+import { useParams } from 'react-router-dom'
 
 function ItemListContainer({greetings}){
     const [products, setProducts] = useState([])
+    const {categoryName} = useParams()
         useEffect(function (){
-            getProducts().then(function(products){
-                setProducts(products)
-            })
+            getProducts().then(function(items){
+                if (!categoryName){
+                    setProducts(items)
+                }else{  
+                    const category = items.filter((i) =>{
+                        return i.plataforma === categoryName
+                    });;
+                    setProducts(category)
+                }
+                    
+            }
+                
 
-        },[])
+        )},[categoryName])
 
 
     

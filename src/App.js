@@ -3,9 +3,11 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {BrowserRouter, Route, Routes, useParams} from 'react-router-dom'
 
 function App() {
+  const {categoryName} = useParams()
+  console.log(categoryName)
   return (
 
     <BrowserRouter>
@@ -14,17 +16,25 @@ function App() {
           <NavBar/>
         </header>
         <Routes>
+          {/* Muestra todo */}
           <Route path='/' element={
             <div className='container box glowing'>
-              <ItemListContainer greetings={"Productos"}/>
+              <ItemListContainer greetings={"Todos los Productos"}/>
             </div>}>            
           </Route>
+          {/* MUestra el producto seleccionado */}
           <Route path='/prods/:prodId' element={
             <div className='container box glowing'>            
-              <ItemDetailContainer greetings={"Producto encontrado con .find"}/>
+              <ItemDetailContainer greetings={""}/>
             </div>}>
-            
           </Route>
+          {/* Muestra las categorias */}
+          <Route path='/category/:categoryName' element={
+            <div className='container box glowing'>            
+              <ItemListContainer greetings={""}/>
+            </div>}>
+          </Route>
+
 
         </Routes>
         
