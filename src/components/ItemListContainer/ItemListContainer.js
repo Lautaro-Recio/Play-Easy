@@ -31,7 +31,7 @@ function ItemListContainer({greetings}){
     return(
         <div className='row '>
             <h3>{greetings}</h3>
-            {products.length > 0 ? <ItemList products={products}/> : <div className='loader'></div>}
+            {products.length > 0 ? <ItemList key={products.id} products={products}/> : <div className='loader'></div>}
         </div>
     )
     

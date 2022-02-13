@@ -1,27 +1,35 @@
-import producto from "../Item/Item"
 import ItemCount from "../ItemCount/ItemCount"
-import {Link} from 'react-router-dom'
 import './ItemDetail.css'
+import { useState } from "react"
+import { Link } from "react-router-dom"
+
 export default function ItemDetail({products}){
+    const [cantidad, setCantidad] = useState()
+
     /* Agregar al carrito */
-    function addToCart(){
-        console.log("se agrego un producto al carrito")
+    function onAddToCart(value){
+        console.log(value)
+        setCantidad(value)
     }
-    console.log(products)
     
     return(   
         products.map(function(producto){
-            console.log(producto)    
             return(
-                <div  className='col-md-12 divCards'>
-                    <div className="cards">
+                <div className='col-md-12 divCards'>
+                    <div className="cardsDetail">
                         <div>
                             <img className='logo' src={producto.console} />
                             <img className='imgsProds' src={producto.img} alt={producto.title} />
                         </div>
-                        <p>$ {producto.price}</p>
-                        <ItemCount initial={1} stock={10} onAdd={addToCart} />
-                        
+                        <p>$ {producto.price}</p> 
+                        {/* Cuando se añada un producto al carrito ItemCount desaparece */}
+
+                        {
+                            ! cantidad ? 
+                            <ItemCount initial={1} stock={producto.stock} onAdd={onAddToCart} />:
+                            <Link to='/cart'> <button className='botonCard'>Ir al carrito</button></Link>
+                        }   
+                    
                     </div>
                     <div className="detalle">
                         <h4>{producto.title}</h4>   

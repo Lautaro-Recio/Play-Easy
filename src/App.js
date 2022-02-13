@@ -4,10 +4,10 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter, Route, Routes, useParams} from 'react-router-dom'
+import cart from './components/cart/cart'
 
 function App() {
   const {categoryName} = useParams()
-  console.log(categoryName)
   return (
 
     <BrowserRouter>
@@ -34,8 +34,12 @@ function App() {
               <ItemListContainer greetings={""}/>
             </div>}>
           </Route>
-
-
+          <Route path='/cart' element={
+            <div className='container box glowing'>
+              <cart/>
+            </div>}>          
+          </Route>
+          
         </Routes>
         
         

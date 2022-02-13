@@ -4,8 +4,6 @@ import logo from '../../assets/imgs/logo.png'
 import SubMenu from '../SubMenu/SubMenu';
 import CartWidget from '../CartWidget/CartWidget'
 import { NavLink, Route } from 'react-router-dom';
-import ItemListContainer from '../ItemListContainer/ItemListContainer';
-
 export default function NavBar (){
     return(
         <div>
@@ -18,7 +16,7 @@ export default function NavBar (){
                     {/* Esto se hace para mostrar una categoria en espec */}
                 </li>
                 <li>
-                    <NavLink to="/"><CartWidget/></NavLink>
+                    <NavLink to="/cart"><CartWidget/></NavLink>
                 </li>
                 <li>
                     <NavLink to="/">En camino</NavLink>

@@ -31,3 +31,16 @@
     margin: 5%;
     
 }
+
+.cards p{
+    color: black;
+}
+.cardsDetail{
+    height: auto;
+    width: 28%;
+    background-color: #0d295e;
+    border: 3px solid black;
+    border-radius: 15px ;
+    text-align: center;
+    padding: 15px;
+}

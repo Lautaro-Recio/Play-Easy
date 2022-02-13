@@ -24,6 +24,11 @@ export default function ItemCount({stock, initial, onAdd}){
         
     }
 
+    function addToCart(event){
+        console.log("se agrego un producto al carrito",event.target.value)
+        onAdd(SumarRestar)
+    }
+
     return(
         <div>
             <div className='contador'>
@@ -32,7 +37,7 @@ export default function ItemCount({stock, initial, onAdd}){
                 <button onClick={sumar}>+</button>
 
             </div>
-            <button className='botonCard' onClick={onAdd}>Comprar</button>
+            <button className='botonCard' onClick={addToCart}>Comprar</button>
         </div>
     );
 }            

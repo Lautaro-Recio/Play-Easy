@@ -11,17 +11,14 @@ function ItemDetailContainer({greetings}){
     const {prodId} = useParams()
         useEffect(function (){
             getProducts().then(function(products){
-                console.log(products)
                 const product = products.find((i) =>{
                     return i.id === Number(prodId)
                 });;
-                console.log(product)
               setDetail(product)
 
             })
 
         },[prodId])
-    console.log(productos)
     return(
         <div className='row '>
             <h3>{greetings}</h3>
