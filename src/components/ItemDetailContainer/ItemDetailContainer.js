@@ -22,7 +22,7 @@ function ItemDetailContainer({greetings}){
     return(
         <div className='row '>
             <h3>{greetings}</h3>
-            {<ItemDetail products={[productos]}/>}
+            {<ItemDetail  products={[productos]}/>}
         </div>
     )
     

@@ -2,10 +2,11 @@ import ItemCount from "../ItemCount/ItemCount"
 import './ItemDetail.css'
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { useContext } from "react"
+
 
 export default function ItemDetail({products}){
     const [cantidad, setCantidad] = useState()
-
     /* Agregar al carrito */
     function onAddToCart(value){
         console.log(value)
