@@ -3,14 +3,20 @@ import './ItemDetail.css'
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useContext } from "react"
+import { CartContext } from "../context/CartContext"
 
 
 export default function ItemDetail({products}){
     const [cantidad, setCantidad] = useState()
+    const {cart,addCart} = useContext(CartContext)
+
+    
+    console.log(cart)
     /* Agregar al carrito */
-    function onAddToCart(value){
-        console.log(value)
-        setCantidad(value)
+    function onAddToCart(cantidad){
+        console.log(cantidad)
+        setCantidad(cantidad)
+        addCart(cantidad,products)
     }
     
     return(   

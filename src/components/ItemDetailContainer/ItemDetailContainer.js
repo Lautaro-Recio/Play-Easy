@@ -20,9 +20,9 @@ function ItemDetailContainer({greetings}){
 
         },[prodId])
     return(
-        <div className='row '>
+        <div key={productos.id} className='row '>
             <h3>{greetings}</h3>
-            {<ItemDetail  products={[productos]}/>}
+            {<ItemDetail products={[productos]}/>}
         </div>
     )
     

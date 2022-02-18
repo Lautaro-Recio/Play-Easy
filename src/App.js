@@ -3,15 +3,17 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter, Route, Routes, useParams} from 'react-router-dom'
-import Cart from './components/Cart/Cart'
-import CartContext from './components/context/CartContext';
+import Cart from './components/cart/cart'
+import {CartContext} from './components/context/CartContext';
+import CartContextProvider from './components/context/CartContext';
+
 function App() {
   const {categoryName} = useParams()
-  console.log(CartContext)
+  console.log(CartContextProvider)
 
   return (
       <BrowserRouter>
-        <CartContext.Provider value={true}>
+        <CartContextProvider>
 
           <div className="App">
             <header>
@@ -44,7 +46,7 @@ function App() {
             </Routes>
           </div>
 
-        </CartContext.Provider>
+        </CartContextProvider>
           
       </BrowserRouter>
 

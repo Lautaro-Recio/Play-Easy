@@ -25,7 +25,6 @@ export default function ItemCount({stock, initial, onAdd}){
     }
 
     function addToCart(event){
-        console.log("se agrego un producto al carrito",event.target.value)
         onAdd(SumarRestar)
     }
 
