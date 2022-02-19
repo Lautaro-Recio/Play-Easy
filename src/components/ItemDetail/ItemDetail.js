@@ -11,12 +11,11 @@ export default function ItemDetail({products}){
     const {cart,addCart} = useContext(CartContext)
 
     
-    console.log(cart)
     /* Agregar al carrito */
     function onAddToCart(cantidad){
-        console.log(cantidad)
         setCantidad(cantidad)
         addCart(cantidad,products)
+        console.log(products.id)
     }
     
     return(   

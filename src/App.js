@@ -9,7 +9,6 @@ import CartContextProvider from './components/context/CartContext';
 
 function App() {
   const {categoryName} = useParams()
-  console.log(CartContextProvider)
 
   return (
       <BrowserRouter>

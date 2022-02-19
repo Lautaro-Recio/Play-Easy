@@ -1,21 +1,22 @@
 import { createContext, useState } from "react";
-import { Children } from "react";
-
 export const CartContext = createContext()
 
-const CartContextProvider = () =>{
+const CartContextProvider = ({children}) =>{
     const [cart, setCart] =useState([]);
+    console.log(cart.id)
     const addCart=(cantidad,item)=>{
-        console.log(cantidad,item)
-        //setCart(cantidad,item)
+        setCart([...cart,{...item,cantidad}])
     }
-    
-    console.log(cart)
+    const repetido=(id)=>{
+        console.log(id)
+        const prodRepetido = cart.some((prod)=> prod.id === 1)
+        console.log(prodRepetido)
+    }
     return( 
-        <CartContext.Provider value={{cart,addCart}}>
-            {Children}
+        <CartContext.Provider value={{cart,addCart, repetido}}>
+            {children}
         </CartContext.Provider>
     )
 }
 
-export default CartContextProvider
+export default {CartContextProvider}
