@@ -15,36 +15,35 @@ export default function ItemDetail({products}){
     function onAddToCart(cantidad){
         setCantidad(cantidad)
         addCart(cantidad,products)
-        console.log(products.id)
     }
     
     return(   
-        products.map(function(producto){
-            return(
-                <div className='col-md-12 divCards'>
+  
+            
+                <div key={products.id} className='col-md-12 divCards'>
                     <div className="cardsDetail">
                         <div>
-                            <img className='logo' src={producto.console} />
-                            <img className='imgsProds' src={producto.img} alt={producto.title} />
+                            <img className='logo' src={products.console} />
+                            <img className='imgsProds' src={products.img} alt={products.title} />
                         </div>
-                        <p>$ {producto.price}</p> 
-                        {/* Cuando se añada un producto al carrito ItemCount desaparece */}
+                        <p>$ {products.price}</p> 
+                        {/* Cuando se añada un products al carrito ItemCount desaparece */}
 
                         {
                             ! cantidad ? 
-                            <ItemCount initial={1} stock={producto.stock} onAdd={onAddToCart} />:
+                            <ItemCount initial={1} stock={products.stock} onAdd={onAddToCart} />:
                             <Link to='/cart'> <button className='botonCard'>Ir al carrito</button></Link>
                         }   
                     
                     </div>
                     <div className="detalle">
-                        <h4>{producto.title}</h4>   
-                        <p>{producto.description}</p>
-                        <p>Edad minima {producto.edad}</p>
+                        <h4>{products.title}</h4>   
+                        <p>{products.description}</p>
+                        <p>Edad minima {products.edad}</p>
                     </div>
                 </div>
-            )
-        })
+            
+       
 
     )  
 }

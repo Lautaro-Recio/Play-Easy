@@ -2,17 +2,13 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import {BrowserRouter, Route, Routes, useParams} from 'react-router-dom'
-import Cart from './components/cart/cart'
-import {CartContext} from './components/context/CartContext';
-import CartContextProvider from './components/context/CartContext';
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Cart from './components/Cart/Cart'
 
 function App() {
-  const {categoryName} = useParams()
-
   return (
       <BrowserRouter>
-        <CartContextProvider>
+        
 
           <div className="App">
             <header>
@@ -43,10 +39,7 @@ function App() {
                 </div>}>          
               </Route>            
             </Routes>
-          </div>
-
-        </CartContextProvider>
-          
+          </div>          
       </BrowserRouter>
 
 
