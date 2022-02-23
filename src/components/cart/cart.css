@@ -34,8 +34,18 @@
     height: 15%;
 }
 .removeItem{
-    
+    background-color: #031ba5;
 }
+.total{
+    color: white;
+    font-size: 21;
+    font-family: 'Courier New', Courier, monospace;
+}
+.h4{
+    color: white;
+    text-align: center;
+}
+
 
 @keyframes buttonGlower {
     0%{

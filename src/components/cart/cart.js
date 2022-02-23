@@ -2,11 +2,20 @@ import { useContext,useState,useEffect } from 'react'
 import { CartContext } from '../context/CartContext'
 import './cart.css'
 import {Link} from 'react-router-dom'
-
-
+import Lottie from 'react-lottie'
+import emptyBox from '../../assets/animacionesLottie/629-empty-box.json'
 export default function Cart(){
     const {cart,clearCart, removeItem, boughtCart} = useContext(CartContext)
     console.log(cart.length)
+
+    const defaultOptions = {
+        loop: true,
+        autoplay:true,
+        renderSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    }
+    
 
     const [totalPrice,setTotalprice]= useState(0)
     useEffect(function (){
@@ -23,10 +32,10 @@ export default function Cart(){
     return (
         <>
                 {cart.length === 0 ? (
-                    <>
-                        <h4>Todavia no compraste nada? pasate por mis productos</h4>
-                        <Link to='/'> <h5>volver a comprar</h5></Link>
-
+                    <>  
+                        <h4 className='h4'>Todavia no compraste nada? pasate por mis productos</h4>
+                        <Lottie  options={{animationData: emptyBox, defaultOptions}} width={150} height={200}/>
+                        <Link to='/'> <h4 className='h4'>volver a comprar</h4></Link>
                     </>
 
 
@@ -54,7 +63,7 @@ export default function Cart(){
                                 </div>
                             )   
                         })}
-                        <p>Total: {totalPrice}</p>
+                        <p className='total'>Total: $ {totalPrice}</p>
                         <button className='clearCart' onClick={clearCart}>Vaciar Carrito</button>
                         <button onClick={boughtCart}>Finalizar compra </button>
                     </div>
