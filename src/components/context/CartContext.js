@@ -41,16 +41,24 @@ const CartContextProvider = ({children}) =>{
         const copia = [...cart]
         console.log(copia)
         copia.forEach((producto) => {
-            console.log(producto.cantidad)
-            console.log(item.id)
             if (producto.id === item.id){
                 producto.cantidad += cantidad
             }
         })
     }
     
+    const boughtCart =() =>{
+        console.log("Compra Finalizada")
+    }
+   
+
+    
+    
+
+    
+    
     return( 
-        <CartContext.Provider value={{cart,addCart,clearCart, removeItem}}>
+        <CartContext.Provider value={{cart,addCart,clearCart, removeItem,boughtCart}}>
             {children}
         </CartContext.Provider>
     )

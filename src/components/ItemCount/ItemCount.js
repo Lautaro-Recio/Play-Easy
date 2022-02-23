@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { CartContext } from '../context/CartContext'
 import './ItemCount.css'
 
 export default function ItemCount({stock, initial, onAdd}){
     const [SumarRestar, setSumaResta] = useState(initial)
-
+    const {totalProducts} = useContext(CartContext)
     function sumar(){
         setSumaResta(SumarRestar+1)
         if (SumarRestar === stock){

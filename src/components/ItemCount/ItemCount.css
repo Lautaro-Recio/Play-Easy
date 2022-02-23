@@ -19,9 +19,10 @@
 }
 
 .contador p{
-    margin: 5px 5px;
-    width: 150px;
-    height: 40px;
+    font-size: 21px;
+    width: 50%;
+    height: 30%;
+    margin: 8px 5px 5px 5px;
     border: 1px black solid;
     border-radius: 15px;
     background-color: white;

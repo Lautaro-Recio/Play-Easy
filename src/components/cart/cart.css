@@ -1,3 +1,51 @@
-div h2{
+.divGeneral{
+    padding: 1px 5% ;
+}
+.divCart{
+    margin: 50px 0px;
+    border-radius: 15px;
+    display: flex;
+    background-color: #031ba559;
+    border-left: #031ba5 10px solid;
+    border-bottom: rgba(80, 80, 80, 0.904) 1px solid;
+    border-right: rgba(80, 80, 80, 0.904) 1px solid;
+}
+
+.divCart div{
+    width: 100%;
+}
+
+.divCart p{
     color: white;
+    justify-content: center;
+    text-align: center;
+    font-size: 21px;
+}
+
+.divCart img{
+    width: 10%;
+    height: 10%;
+    padding: 15px;
+}
+
+
+.clearCart{
+    width: 20%;
+    height: 15%;
+}
+.removeItem{
+    
+}
+
+@keyframes buttonGlower {
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 100% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+    
 }
