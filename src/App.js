@@ -4,7 +4,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Cart from './components/Cart/cart'
-
+import AddItemContainer from './components/AddItemContainer/AddItemContainer'
 function App() {
   return (
       <BrowserRouter>
@@ -36,6 +36,11 @@ function App() {
               <Route path='/cart' element={
                 <div className='container box glowing'>
                   <Cart/>
+                </div>}>          
+              </Route> 
+              <Route path='/addItem' element={
+                <div className='container box glowing'>
+                  <AddItemContainer/>
                 </div>}>          
               </Route>            
             </Routes>

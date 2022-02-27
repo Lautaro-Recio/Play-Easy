@@ -1,0 +1,10 @@
+label{
+    color: white;
+    margin: 25px 50px;
+}
+form div{
+    margin: 25px;
+    border-color:1px solid whitesmoke;
+    border-radius: 15%;
+    text-align: center;
+}
