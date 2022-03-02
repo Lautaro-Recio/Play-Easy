@@ -19,7 +19,6 @@ function ItemDetailContainer({greetings}){
             })
 
         },[prodId])
-        console.log(productos)
     return(
         <div key={productos.id} className='row '>
             <h3>{greetings}</h3>

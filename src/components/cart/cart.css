@@ -45,7 +45,20 @@
     color: white;
     text-align: center;
 }
-
+.formCorrecto {
+    border: 3px solid green;
+    color: green; 
+}
+  
+.formMal {
+    border: 3px solid red;
+    color: red; 
+}
+  
+.formVacio {
+    border: 3px solid black;
+    color: black; 
+}
 
 @keyframes buttonGlower {
     0%{

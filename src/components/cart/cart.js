@@ -5,8 +5,7 @@ import {Link} from 'react-router-dom'
 import Lottie from 'react-lottie'
 import emptyBox from '../../assets/animacionesLottie/629-empty-box.json'
 export default function Cart(){
-    const {cart,clearCart, removeItem, boughtCart} = useContext(CartContext)
-    console.log(cart.length)
+    const {compraHecha,idCompra,cart,clearCart, removeItem,boughtCart,checkOut,direccion,mail,name,nombreChange,mailChange,direccionChange,check} = useContext(CartContext)
 
     const defaultOptions = {
         loop: true,
@@ -16,6 +15,12 @@ export default function Cart(){
         }
     }
     
+    /* Expresiones */
+    const expresiones = {
+        nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+        direccion: /^.{4,30}$/, // 4 a 30 digitos.
+        gmail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    };
 
     const [totalPrice,setTotalprice]= useState(0)
     useEffect(function (){
@@ -65,7 +70,33 @@ export default function Cart(){
                         })}
                         <p className='total'>Total: $ {totalPrice}</p>
                         <button className='clearCart' onClick={clearCart}>Vaciar Carrito</button>
-                        <button onClick={boughtCart}>Finalizar compra </button>
+                        <button onClick={checkOut}>Comprar! </button>
+
+                        {check=== true?
+                            (
+                                <>
+                                    <form action="">
+                                        <div>
+                                            <label>Nombre y Apellido</label>
+                                            <input value={name} onChange={nombreChange} type="text" id='name' />
+                                        </div>
+                                        <div>
+                                            <label>Direccion</label>
+                                            <input value={direccion} onChange={direccionChange} type="text" id='direcc' />
+                                        </div>
+                                        <div>
+                                            <label>Mail</label>
+                                            <input value={mail} onChange={mailChange} type="text" id='mail' />
+                                        </div>
+                                        <button disabled={(expresiones.nombre.test(name)===false) | (expresiones.gmail.test(mail)===false) | (expresiones.direccion.test(direccion)===false)} onClick={boughtCart}>Finalizar compra </button>
+                                    </form>
+                                </>
+                            ):(
+                                <>
+                                </>
+                            )
+                        }
+
                     </div>
                 )
                 }

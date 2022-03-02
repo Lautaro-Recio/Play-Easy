@@ -5,6 +5,9 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Cart from './components/Cart/cart'
 import AddItemContainer from './components/AddItemContainer/AddItemContainer'
+import NewUsserContainer from './components/NewUsserContainer/NewUsserContainer';
+import ProdsEnCamino from './components/ProdsEnCamino/ProdsEnCamino'
+
 function App() {
   return (
       <BrowserRouter>
@@ -42,7 +45,17 @@ function App() {
                 <div className='container box glowing'>
                   <AddItemContainer/>
                 </div>}>          
-              </Route>            
+              </Route>       
+              <Route path='/register' element={
+                <div className='container box glowing'>
+                  <NewUsserContainer/>
+                </div>}>          
+              </Route>
+              <Route path='/enCamino' element={
+                <div className='container box glowing'>
+                  <ProdsEnCamino/>
+                </div>}>          
+              </Route>     
             </Routes>
           </div>          
       </BrowserRouter>

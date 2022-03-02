@@ -13,16 +13,26 @@ export default function CartWidget(){
             total = total+element.cantidad
             setTotalprods(total)
         });
-        console.log(cart.length)   
-        console.log(total) 
+        if (cart.length === 0){
+            total =0
+            setTotalprods(total)
+        }
     },[cart])
     
-
     return(
         <div>
-            <p>{totalProds}</p>
-            <img className='carrito' src={image} alt="Carrito de compras" />
+            {totalProds === 0 ?(
+                 <img className='carrito' src={image} alt="Carrito de compras" />
+            ):(
+                <>
+                    <p>{totalProds}</p>
+                    <img className='carrito' src={image} alt="Carrito de compras" />
+                </>
+            )
+
+            }
         </div>
     )  
+
 
 }

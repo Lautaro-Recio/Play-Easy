@@ -4,7 +4,13 @@ import logo from '../../assets/imgs/logo.png'
 import SubMenu from '../SubMenu/SubMenu';
 import CartWidget from '../CartWidget/CartWidget'
 import { NavLink, Route } from 'react-router-dom';
+import { NewUsserContext } from '../context/NewUsserContext'
+import { useContext } from 'react'
+
 export default function NavBar (){
+    const {registrado,userName} = useContext(NewUsserContext)
+
+
     return(
         <div>
             <ul>
@@ -19,10 +25,18 @@ export default function NavBar (){
                     <NavLink to="/cart"><CartWidget/></NavLink>
                 </li>
                 <li>
-                    <NavLink to="/">En camino</NavLink>
+                    <NavLink to="/enCamino">En camino</NavLink>
                 </li>
                 <li className='log'>
-                    <NavLink to="/">Log In</NavLink>
+                    {registrado===true ?
+                    (<>
+                        <p>${userName}</p>
+                    </>)
+                    :(
+                        <NavLink to="/register">Log In</NavLink>
+                    )
+
+                    }
                 </li>
             </ul>
         </div>
