@@ -6,10 +6,28 @@ import CartWidget from '../CartWidget/CartWidget'
 import { NavLink, Route } from 'react-router-dom';
 import { NewUsserContext } from '../context/NewUsserContext'
 import { useContext } from 'react'
+import UsserLogueado from '../UsserLogueado/UsserLogueado';
+import { useEffect, useState } from 'react';
+import { auth } from '../../Firebase';
 
 export default function NavBar (){
-    const {registrado,userName} = useContext(NewUsserContext)
+    const [user,setUser]= useState(()=>auth.currentUser)
+    const [init, setInit] = useState(true)
 
+    useEffect(()=>{
+        const userListener = auth.onAuthStateChanged(user =>{
+        if (user){
+            setUser(user)
+        } else {
+            setUser(false)
+        }
+
+        if(init) {
+            setInit(false)
+        }
+        })
+        return userListener
+    },[init])    
 
     return(
         <div>
@@ -28,15 +46,7 @@ export default function NavBar (){
                     <NavLink to="/enCamino">En camino</NavLink>
                 </li>
                 <li className='log'>
-                    {registrado===true ?
-                    (<>
-                        <p>${userName}</p>
-                    </>)
-                    :(
-                        <NavLink to="/register">Log In</NavLink>
-                    )
-
-                    }
+                        {user ? <UsserLogueado/>:<NavLink to="/register">Log In</NavLink>}
                 </li>
             </ul>
         </div>

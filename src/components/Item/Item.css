@@ -1,16 +1,8 @@
-.cards{
-    height: auto;
-    width: 20%;
-    background-color: #0d295e;
-    border: 3px solid black;
-    border-radius: 15px ;
-    text-align: center;
-    padding: 15px;
-}
+
 .imgsProds{
     width: 100%;
     height: 280px;
-    border: 3px solid blue;
+    border: 3px solid rgb(0, 0, 0);
 }
 .imgsProds:hover > p{
    background-color: darkgreen;
@@ -18,7 +10,7 @@
 .cards p{
     font-size: 18px;
     font-weight: 500;
-    color: darkgrey;
+    color: rgb(0, 0, 0);
 }
 
 .botonCard{
@@ -36,9 +28,34 @@
     color: black;
     box-shadow: 0px 0px 40px #7fff00;
 }
-.logo{
+.logoPlay{
     width: 100%;
     height: 40px;
     border: 3px solid blue;
     background-color: blue;
+}
+.cardsPlay{
+    height: auto;
+    width: 200px;
+    background-color: blue;
+    border: 3px solid black;
+    border-radius: 15px ;
+    text-align: center;
+    padding: 15px;
+    margin: 0px;
+}
+.logoXbox{
+    width: 80%;
+    height: 40px;
+    border: 3px solid rgb(39, 168, 27);
+    background-color: rgb(39, 168, 27);
+}
+.cardsXbox{
+    height: auto;
+    width: 200px;
+    background-color: rgb(39, 168, 27);
+    border: 3px solid black;
+    border-radius: 15px ;
+    text-align: center;
+    padding: 15px;
 }

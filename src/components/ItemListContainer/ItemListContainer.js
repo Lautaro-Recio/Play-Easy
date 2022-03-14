@@ -5,8 +5,7 @@ import { getProducts } from '../Arrays/Arrays'
 import '../ItemList/ItemList'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
-import {getDocs,collection,Firestore} from 'firebase/firestore'
-import {dataBase} from '../../Firebase'
+
 function ItemListContainer({greetings}){
     const [products, setProducts] = useState([])
     const {categoryName} = useParams()
@@ -22,16 +21,12 @@ function ItemListContainer({greetings}){
                 }
                     
             }
-            
-
-                
-
         )},[categoryName])
         
     
     
     return(
-        <div className='row '>
+        <div>
             <h3>{greetings}</h3>
             {products.length > 0 ? <ItemList key={products.id} products={products}/> : <div className='loader'></div>}
         </div>

@@ -1,0 +1,25 @@
+.IdDeCompras{
+    background-color: springgreen;
+    border-radius: 30px;
+    border: black 3px solid;
+    text-align: center;
+    width: 500px;
+}
+.IdDeCompras img{
+    width: 50px;
+    height: 50px;
+}
+.IdDeCompras div{
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border: black 3px solid;
+    border-radius: 15px;
+    margin: 5px;
+}
+.IdDeCompras p{
+    color:black;
+}
+.displayFlex{
+    display: flex;
+}

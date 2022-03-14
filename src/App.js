@@ -6,13 +6,15 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Cart from './components/Cart/cart'
 import AddItemContainer from './components/AddItemContainer/AddItemContainer'
 import NewUsserContainer from './components/NewUsserContainer/NewUsserContainer';
-import ProdsEnCamino from './components/ProdsEnCamino/ProdsEnCamino'
+import ProdsInComing from './components/ProdsInComing/ProdsInComing'
+
 
 function App() {
+  
+
+
   return (
       <BrowserRouter>
-        
-
           <div className="App">
             <header>
               <NavBar/>
@@ -20,7 +22,7 @@ function App() {
             <Routes>
               {/* Muestra todo */}
               <Route path='/' element={
-                <div className='container box glowing'>
+                <div className='box glowing'>
                   <ItemListContainer greetings={"Todos los Productos"}/>
                 </div>}>            
               </Route>
@@ -53,9 +55,10 @@ function App() {
               </Route>
               <Route path='/enCamino' element={
                 <div className='container box glowing'>
-                  <ProdsEnCamino/>
+                  <ProdsInComing/>
                 </div>}>          
-              </Route>     
+              </Route>   
+                
             </Routes>
           </div>          
       </BrowserRouter>

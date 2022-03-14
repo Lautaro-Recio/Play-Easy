@@ -9,36 +9,54 @@
 
 }
 
-.detalle{
+.detallePlay{
     width: 100%;
-    background-color: #0d295e;
+    background-color: blue;
+    border: 3px solid black;
+    border-radius: 15px ;
+    text-align: center;
+    margin: 0px 20px;
+}
+.detalleXbox{
+    width: 100%;
+    background-color: rgb(39, 168, 27);
     border: 3px solid black;
     border-radius: 15px ;
     text-align: center;
     margin: 0px 20px;
 }
 
-.detalle h4{
+
+.detallePlay h4, .detalleXbox h4{
     font-size: 30px;
     color: white;
     margin: 1%;
-
 }
-.detalle p{
+.detallePlay p, .detallePlay p{
     font-size: 18px;
     color: white;
     padding: 0% 5%;
     margin: 5%;
-    
+    padding: 50px;
 }
 
 .cards p{
     color: black;
 }
-.cardsDetail{
+.cardsDetailPlay{
     height: auto;
     width: 28%;
-    background-color: #0d295e;
+    background-color: blue;
+    border: 3px solid black;
+    border-radius: 15px ;
+    text-align: center;
+    padding: 15px;
+}
+
+.cardsDetailXbox{
+    height: auto;
+    width: 28%;
+    background-color: rgb(39, 168, 27);
     border: 3px solid black;
     border-radius: 15px ;
     text-align: center;

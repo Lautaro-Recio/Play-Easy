@@ -1,0 +1,17 @@
+.ingresar{
+    display: flex;
+    height: 80px;
+    width: 250px;
+    justify-content: end;
+    border-radius: 35px;
+    border-color: black 5px solid;
+}
+.ingresar img{
+    height: 50px;
+    width: 50px;
+    margin-top: 1px;
+}
+.ingresar p{
+    width: 150px;
+    color: black;
+}

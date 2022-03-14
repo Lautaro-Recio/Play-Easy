@@ -1,56 +1,41 @@
-import { createContext, useState } from "react";
-//import { NewUsserContext } from './NewUsserContext'
+import { createContext, useState, useContext} from "react";
 import { dataBase } from "../../Firebase";
-import { addDoc, collection, getDocs,updateDoc,doc } from 'firebase/firestore'
-import { useContext,useEffect } from 'react'
-import swal from 'sweetalert'
+import { addDoc, collection, updateDoc,doc } from 'firebase/firestore'
+import { useEffect } from 'react'
+import swal from 'sweetalert2'
+import { NewUsserContext } from "./NewUsserContext";
 
 
 
 export const CartContext = createContext()
 
 const CartContextProvider = ({children}) =>{
-    //const {NombreApellido,userName,mail,title} = useContext(NewUsserContext)
-    
-    const [name, setName] =useState("");
+    const {nombreDeUsuario,Mail} = useContext(NewUsserContext)
+    const [totalProds,setTotalprods]= useState(0)
     const [direccion, setDireccion] =useState("");
-    const [mail, setMail] =useState("");
     const [check, setCheck] =useState(false);
     const [totalPrice,setTotalprice]= useState(0)
     const [idCompra,setIdCompra]= useState("")
     const [compraHecha,setCompraHecha]= useState(false)
-    
-    
-    const nombreChange = event => setName(event.target.value)
     const direccionChange = event => setDireccion(event.target.value)
-    const mailChange = event => setMail(event.target.value)
-
     const [cart, setCart] =useState([]);
-
     const addCart=(cantidad,item)=>{
         if(isOnCart(item.id)){
-            //sumar Cantidad
             sumarCantidad(cantidad,item)
         } else {            
             setCart([...cart, { ...item, cantidad }]);
         }
     }
-    //Esta repetido el producto
     const isOnCart = (id) => {
-        //.some por si encuentra algo en el carrito
         const respuesta = cart.some((prod) => prod.id === id)
         return respuesta
     }
-
-    //Setea el carrito en 0 y por eso se borran todos los productos agregados
     const clearCart = () =>{
         setCart([])
     }
     const removeItem = (id) =>{
         setCart(cart.filter((prod) => prod.id !== id))
-    }
-
-    //sumar cantidad 
+    } 
     const sumarCantidad =(cantidad,item)=>{
         const copia = [...cart]
         copia.forEach((producto) => {
@@ -59,8 +44,6 @@ const CartContextProvider = ({children}) =>{
             }
         })
     }
-
-    
     useEffect(function (){
         const copia3 = [...cart]
         let total =0
@@ -75,13 +58,24 @@ const CartContextProvider = ({children}) =>{
     const checkOut = () =>{
         setCheck(true)
     }
-
+    
+    useEffect(function (){
+        const copia2 = [...cart]
+        let total =0
+        copia2.forEach(element => {
+            total = total+element.cantidad
+            setTotalprods(total)
+        });
+        if (cart.length === 0){
+            total =0
+            setTotalprods(total)
+        }
+    },[cart])
     const boughtCart =() =>{
-        const compra = collection(dataBase,"compra")
+        const compra = collection(dataBase,Mail)
             const fecha = new Date()
             const buyer={
-                name,
-                mail,
+                nombreDeUsuario,
                 direccion,
             }
             const newCompra ={
@@ -94,21 +88,22 @@ const CartContextProvider = ({children}) =>{
             .then((carritoComprado)=> {
                 setIdCompra(carritoComprado.id)
             })
-            swal({
+            swal.fire({
                 position: 'top-end',
                 icon: 'success',
                 title: 'Tu compra se realizo correctamente, podes seguir tu producto en la seccion "En Camino"',
+                showConfirmButton: false,
             })
+            
             setCompraHecha(true)
             setCart([])
-            //INVESTIGAR EL BATCH PARA ACTUALIZAR EL STOCK
+
             const copia4 = [...cart]
             copia4.forEach(element => {
                 const id = element.id
                 console.log(element.stock)
                 const stockOfDatabase=element.stock
                 const docRef = doc(dataBase,"items",id)
-
                 updateDoc(docRef,{stock:stockOfDatabase-element.cantidad})
 
             });
@@ -122,7 +117,7 @@ const CartContextProvider = ({children}) =>{
 
 
     return( 
-        <CartContext.Provider value={{compraHecha,idCompra,totalPrice,cart,addCart,clearCart, removeItem,boughtCart,checkOut,direccion,mail,name,nombreChange,mailChange,direccionChange,check}}>
+        <CartContext.Provider value={{compraHecha,idCompra,totalPrice,cart,addCart,clearCart, removeItem,boughtCart,checkOut,direccion,direccionChange,check,totalProds}}>
             {children}
         </CartContext.Provider>
     )

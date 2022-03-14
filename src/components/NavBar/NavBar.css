@@ -15,7 +15,7 @@ ul {
     justify-content: flex-end;
     margin: 0px ;
     padding-right:200px ;
-    z-index: 9999999;
+    z-index: 999;
 }
 
 ul li{

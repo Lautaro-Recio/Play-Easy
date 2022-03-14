@@ -1,0 +1,32 @@
+
+.usser{
+    display: flex;
+    background: linear-gradient(120deg,  #8d01a0, #031ba5, #e6036d);
+    border-radius: 15px;
+    border-color: black 3px solid;
+}
+.usser img{
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    border-color: black 5px solid;
+    margin: 10px;
+}
+
+.usser button{
+    height: 35px;
+    width: 60px;
+    border-radius: 15px;
+    margin: 9% 2%;
+
+}
+.usser p{
+    color: white;    
+}
+.usser a{
+    display: flex;
+    border: none;
+}
+.usser a:hover{
+    border: none;
+}

@@ -4,8 +4,13 @@ import './cart.css'
 import {Link} from 'react-router-dom'
 import Lottie from 'react-lottie'
 import emptyBox from '../../assets/animacionesLottie/629-empty-box.json'
+import basurero from '../../assets/imgs/basurero.png'
+
+
+
+
 export default function Cart(){
-    const {compraHecha,idCompra,cart,clearCart, removeItem,boughtCart,checkOut,direccion,mail,name,nombreChange,mailChange,direccionChange,check} = useContext(CartContext)
+    const {cart,clearCart, removeItem,boughtCart,checkOut,direccion,direccionChange,check} = useContext(CartContext)
 
     const defaultOptions = {
         loop: true,
@@ -63,34 +68,29 @@ export default function Cart(){
                                         <p>Cantidad: {producto.cantidad}</p>
                                     </div>
                                     <div>
-                                        <button className='removeItem' onClick={()=>removeItem(producto.id)} >x</button>                        
+                                        <button className='removeItem' onClick={()=>removeItem(producto.id)} ><img src={basurero} alt="Basurero" /></button>                        
                                     </div>                              
                                 </div>
                             )   
                         })}
                         <p className='total'>Total: $ {totalPrice}</p>
                         <button className='clearCart' onClick={clearCart}>Vaciar Carrito</button>
-                        <button onClick={checkOut}>Comprar! </button>
+                        <button className='clearCart' onClick={checkOut}>Comprar! </button>
 
                         {check=== true?
                             (
-                                <>
+                                <div>
+                                    <p>Carga la direccion a donde quieres que lleguen tus productos!</p>
                                     <form action="">
-                                        <div>
-                                            <label>Nombre y Apellido</label>
-                                            <input value={name} onChange={nombreChange} type="text" id='name' />
-                                        </div>
+                                    
                                         <div>
                                             <label>Direccion</label>
                                             <input value={direccion} onChange={direccionChange} type="text" id='direcc' />
                                         </div>
-                                        <div>
-                                            <label>Mail</label>
-                                            <input value={mail} onChange={mailChange} type="text" id='mail' />
-                                        </div>
-                                        <button disabled={(expresiones.nombre.test(name)===false) | (expresiones.gmail.test(mail)===false) | (expresiones.direccion.test(direccion)===false)} onClick={boughtCart}>Finalizar compra </button>
+                                    
+                                        <button disabled={(expresiones.direccion.test(direccion)===false)} onClick={boughtCart}>Finalizar compra </button>
                                     </form>
-                                </>
+                                </div>
                             ):(
                                 <>
                                 </>

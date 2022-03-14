@@ -1,21 +1,33 @@
 import { useContext } from "react"
-import { CartContext } from "../context/CartContext"
-import {Link} from 'react-router-dom'
 import './ProdsEnCamino.css'
+import { NewUsserContext } from "../context/NewUsserContext"
+import { collection, getDocs } from "firebase/firestore"
+import { auth, dataBase } from "../../Firebase"
 
-export default function ProdsEnCamino(){
-const {compraHecha,idCompra} = useContext(CartContext)
-    return(
-    <>
-        {compraHecha === true ?(
-            <p>Tu compra finalizo correctamente! {idCompra}</p>
-        ):(
-            <>
-                <h4>No tenes ninguna compra hecha</h4>
-                <Link to='/'> <h4 className='h4'>volver a comprar</h4></Link>
-            </>
-        )
-        }
 
-    </>
-)}
+const promesa2 = new Promise(
+    function(resolve,reject){
+            const {email} = auth.currentUser
+            console.log(email)
+        
+        getDocs(collection(dataBase, email))
+        .then(snapshot =>{
+            const users = snapshot.docs.map((doc)=> ({id: doc.id, ...doc.data()}))
+            console.log(users)
+            resolve(users)
+        })
+        .catch(error=>{
+            reject(error)
+        })
+    }
+)
+   
+function getIds(){
+    console.log(promesa2)
+    return promesa2
+}
+export{
+    getIds,
+}
+ 
+

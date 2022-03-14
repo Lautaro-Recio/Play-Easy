@@ -1,21 +1,28 @@
 import React, { useContext, useState } from 'react'
-import { CartContext } from '../context/CartContext'
 import './ItemCount.css'
-import swal from 'sweetalert'
+import swal from 'sweetalert2'
+import { NewUsserContext } from "../context/NewUsserContext"
+import { auth } from '../../Firebase'
+
 
 export default function ItemCount({stock, initial, onAdd}){
     const [SumarRestar, setSumaResta] = useState(initial)
-    const {totalProducts} = useContext(CartContext)
+    const {usserLoguado} = useContext(NewUsserContext)
+
     function sumar(){
         setSumaResta(SumarRestar+1)
         if (SumarRestar === stock){
             /* Si al restar productos el valor es igual a 1 el valor se iguala a la constante que tiene valor constante*/
             setSumaResta(stock)
-            swal({
-                icon: 'error',
+            swal.fire({
                 position: 'top-end',
                 title: 'No hay mas stock de este producto en stock',
-                timer: 1500
+                timer: 1500,
+                showConfirmButton: false,
+                background: 'red',
+                color:'white',
+                fontSize:'2px'
+
             })
         }
     }
@@ -25,11 +32,14 @@ export default function ItemCount({stock, initial, onAdd}){
         if (SumarRestar === 1){
             /* Si al restar productos el valor es igual a 1 el valor se iguala a la constante que tiene valor constante*/
             setSumaResta(SumarRestar)
-            swal({
+            swal.fire({
                 position: 'top-end',
-                icon: 'error',
                 title: 'No se pueden restar mas items',
-                timer: 1500
+                timer: 1500,
+                showConfirmButton: false,
+                background: 'red',
+                color:'white',
+                fontSize:'2px'
             })
 
         }
@@ -42,13 +52,14 @@ export default function ItemCount({stock, initial, onAdd}){
 
     return(
         <div>
+            <p>Stock disponible {stock}</p>
             <div className='contador'>
                 <button onClick={restar}>-</button>
                 <p className='Cantidad'>{SumarRestar}</p>
                 <button onClick={sumar}>+</button>
 
             </div>
-            <button className='botonCard' onClick={addToCart}>Comprar</button>
+            <button className='botonCard' disabled={(stock===0) | (auth.currentUser===null)} onClick={addToCart}>Comprar</button>
         </div>
     );
 }            
