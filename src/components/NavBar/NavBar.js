@@ -38,7 +38,6 @@ export default function NavBar (){
                 <li className='botonSub'>
                     <NavLink to="/">Productos</NavLink>
                     <SubMenu/>
-                    {/* Esto se hace para mostrar una categoria en espec */}
                 </li>
                 <li>
                     <NavLink to="/cart"><CartWidget/></NavLink>

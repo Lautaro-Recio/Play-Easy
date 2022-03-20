@@ -14,10 +14,7 @@ export default function AddItemContainer () {
     const [console,setConsole]=useState("")
     const [plataforma,setPlataforma]=useState("")
     const [description,setDescription]=useState("")
-    
-
-    //Funciones que toman los valores de los inputs
-    const stockChange = event => setStock(event.target.value)
+        const stockChange = event => setStock(event.target.value)
     const imgChange = event => setImg(event.target.value)
     const titleChange = event => setTitle(event.target.value)
     const edadChange = event => setEdad(event.target.value)

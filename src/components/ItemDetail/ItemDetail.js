@@ -28,7 +28,6 @@ export default function ItemDetail({products}){
                                 <img className='imgsProds' src={products.img} alt={products.title} />
                             </div>
                             <p>$ {products.price}</p> 
-                            {/* Cuando se añada un products al carrito ItemCount desaparece */}
 
                             {
                                 ! cantidad ? 
@@ -53,7 +52,6 @@ export default function ItemDetail({products}){
                                 <img className='imgsProds' src={products.img} alt={products.title} />
                             </div>
                             <p>$ {products.price}</p> 
-                            {/* Cuando se añada un products al carrito ItemCount desaparece */}
 
                             {
                                 ! cantidad ? 
@@ -78,7 +76,6 @@ export default function ItemDetail({products}){
                                 <img className='imgsProds' src={products.img} alt={products.title} />
                             </div>
                             <p>$ {products.price}</p> 
-                            {/* Cuando se añada un products al carrito ItemCount desaparece */}
 
                             {
                                 ! cantidad ? 
@@ -103,7 +100,6 @@ export default function ItemDetail({products}){
                             <img className='imgsProds' src={products.img} alt={products.title} />
                         </div>
                         <p>$ {products.price}</p> 
-                        {/* Cuando se añada un products al carrito ItemCount desaparece */}
 
                         {
                             ! cantidad ? 

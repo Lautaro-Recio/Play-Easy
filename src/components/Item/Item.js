@@ -8,7 +8,6 @@ export default function Item({Item}){
         { Item.plataforma === "xbox" ?(
             <>
                 <div className='cardsXbox '>
-                    {/* En el link le paso la propiedad Item.Id para que lea el Id de cada producto y asi vaya cambiando */}
                     <Link to={`/prods/${Item.id}`}>
                         <div>
                             <img className='logoXbox' src={Item.console} />
@@ -24,7 +23,6 @@ export default function Item({Item}){
         ): Item.plataforma === "ps" ?  (
             <>
                 <div className='cardsPlay '>
-                    {/* En el link le paso la propiedad Item.Id para que lea el Id de cada producto y asi vaya cambiando */}
                     <Link to={`/prods/${Item.id}`}>
                         <div>
                             <img className='logoPlay' src={Item.console} />
@@ -41,7 +39,6 @@ export default function Item({Item}){
         ): Item.plataforma === "pc" ?  (
             <>
                 <div className='cardsPc '>
-                    {/* En el link le paso la propiedad Item.Id para que lea el Id de cada producto y asi vaya cambiando */}
                     <Link to={`/prods/${Item.id}`}>
                         <div>
                             <img className='logoPc' src={Item.console} />
@@ -58,7 +55,6 @@ export default function Item({Item}){
         ):(
             <>
                 <div className='cardsComplementos '>
-                    {/* En el link le paso la propiedad Item.Id para que lea el Id de cada producto y asi vaya cambiando */}
                     <Link to={`/prods/${Item.id}`}>
                         <div>
                             <img className='logoComplementos' src={Item.console} />

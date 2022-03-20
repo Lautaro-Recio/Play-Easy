@@ -20,10 +20,9 @@ export default function Cart(){
         }
     }
     
-    /* Expresiones */
     const expresiones = {
-        nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-        direccion: /^.{4,30}$/, // 4 a 30 digitos.
+        nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+        direccion: /^.{4,30}$/,
         gmail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     };
 

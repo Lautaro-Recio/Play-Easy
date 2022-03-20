@@ -5,7 +5,6 @@ import { getProducts } from '../Arrays/Arrays'
 import '../ItemList/ItemList'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
-/* Es Igual que el ItemListContainer solo que con un find */
 function ItemDetailContainer({greetings}){
     const [productos, setDetail] = useState([])
     const {prodId} = useParams()
