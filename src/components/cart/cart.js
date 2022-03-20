@@ -53,25 +53,50 @@ export default function Cart(){
                     <div className='divGeneral'>
                         {cart.map((producto)=>{
                             return(
-                                <div className='divCart' key={producto.id}>
-                                    <img src={producto.img} alt={producto.title} />
-                                    <div>
-                                        <p>{producto.title}</p>
-                                    </div>
-                                    <div>
-                                        <p>$ {producto.price*producto.cantidad}</p>
-                                    </div>
-                                    <div>
-                                        <p>Edad minima: {producto.edad}</p>   
-                                    </div>
-                                    <div>
-                                        <p>Cantidad: {producto.cantidad}</p>
-                                    </div>
-                                    <div>
-                                        <button className='removeItem' onClick={()=>removeItem(producto.id)} ><img src={basurero} alt="Basurero" /></button>                        
-                                    </div>                              
-                                </div>
-                            )   
+
+                                producto.plataforma === "xbox" ? (
+                                    
+                                        <div className='divCartXbox' key={producto.id}>
+                                            <img src={producto.img} alt={producto.title} />
+                                            <div>
+                                                <p>{producto.title}</p>
+                                            </div>
+                                            <div>
+                                                <p>$ {producto.price*producto.cantidad}</p>
+                                            </div>
+                                            <div>
+                                                <p>Edad minima: {producto.edad}</p>   
+                                            </div>
+                                            <div>
+                                                <p>Cantidad: {producto.cantidad}</p>
+                                            </div>
+                                            <div>
+                                                <button className='removeItem' onClick={()=>removeItem(producto.id)} ><img src={basurero} alt="Basurero" /></button>                        
+                                            </div>                              
+                                        </div>
+                                    ):(
+                                        <div className='divCartPlay' key={producto.id}>
+                                        <img src={producto.img} alt={producto.title} />
+                                        <div>
+                                            <p>{producto.title}</p>
+                                        </div>
+                                        <div>
+                                            <p>$ {producto.price*producto.cantidad}</p>
+                                        </div>
+                                        <div>
+                                            <p>Edad minima: {producto.edad}</p>   
+                                        </div>
+                                        <div>
+                                            <p>Cantidad: {producto.cantidad}</p>
+                                        </div>
+                                        <div>
+                                            <button className='removeItem' onClick={()=>removeItem(producto.id)} ><img src={basurero} alt="Basurero" /></button>                        
+                                        </div>                              
+                                    </div> 
+                                    )
+                            )
+                        
+                            
                         })}
                         <p className='total'>Total: $ {totalPrice}</p>
                         <button className='clearCart' onClick={clearCart}>Vaciar Carrito</button>

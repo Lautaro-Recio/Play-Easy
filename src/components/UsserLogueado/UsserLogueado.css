@@ -1,27 +1,45 @@
 
 .usser{
     display: flex;
-    background: linear-gradient(120deg,  #8d01a0, #031ba5, #e6036d);
+	background: linear-gradient(120deg,#ff00d4, #8d01a0, #031ba5,#ff004c);
     border-radius: 15px;
-    border-color: black 3px solid;
+    border: black 3px solid;
+    width: 100%;
+    animation: glower 15s ease infinite; 
+    background-size: 400%;
+
+    height: 50px;   
+}
+@keyframes glower {
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 100% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+    
 }
 .usser img{
     border-radius: 100%;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     border-color: black 5px solid;
-    margin: 10px;
+    margin: 10px 5px;
 }
 
 .usser button{
-    height: 35px;
-    width: 60px;
+    height: 25px;
+    width: 50px;
     border-radius: 15px;
-    margin: 9% 2%;
+    margin: 8% 2%;
 
 }
 .usser p{
-    color: white;    
+    color: white;   
+    width: 100px; 
 }
 .usser a{
     display: flex;

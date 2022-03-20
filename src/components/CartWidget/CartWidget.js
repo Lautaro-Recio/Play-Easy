@@ -8,7 +8,7 @@ export default function CartWidget(){
     
     
     return(
-        <div>
+        <>
             {totalProds === 0 ?(
                  <img className='carrito' src={image} alt="Carrito de compras" />
             ):(
@@ -19,7 +19,7 @@ export default function CartWidget(){
             )
 
             }
-        </div>
+        </>
     )  
 
 

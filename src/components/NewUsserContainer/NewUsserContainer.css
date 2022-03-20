@@ -1,17 +1,23 @@
 .ingresar{
     display: flex;
-    height: 80px;
-    width: 250px;
+    height: 50px;
+    width: 200px;
     justify-content: end;
     border-radius: 35px;
     border-color: black 5px solid;
+    margin: 3% 40%;
 }
 .ingresar img{
-    height: 50px;
-    width: 50px;
-    margin-top: 1px;
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
 }
 .ingresar p{
     width: 150px;
     color: black;
+}
+.UsserDiv{
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
 }

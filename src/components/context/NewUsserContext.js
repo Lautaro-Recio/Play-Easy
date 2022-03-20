@@ -24,7 +24,6 @@ const NewUsserProvider = ({children}) => {
           Toast.fire({
             position: 'center-end',
             title: 'Inicia sesion para comprar',
-            background:'red',
             showConfirmButton: false,
             scrollbarPadding: true,
           })
@@ -43,7 +42,6 @@ const NewUsserProvider = ({children}) => {
           Toast2.fire({
             position: 'top-end',
             title: 'Bienvenido a Play Easy',
-            background:'red',
             showConfirmButton: false,
             scrollbarPadding: true,
             timer:1500

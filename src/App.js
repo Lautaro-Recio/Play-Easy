@@ -6,7 +6,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Cart from './components/Cart/cart'
 import AddItemContainer from './components/AddItemContainer/AddItemContainer'
 import NewUsserContainer from './components/NewUsserContainer/NewUsserContainer';
-import ProdsInComing from './components/ProdsInComing/ProdsInComing'
+import ProdsEnCamino from './components/ProdsEnCamino/ProdsEnCamino';
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
               {/* Muestra todo */}
               <Route path='/' element={
                 <div className='box glowing'>
-                  <ItemListContainer greetings={"Todos los Productos"}/>
+                  <ItemListContainer greetings={"Bienvenido a Play Easy"}/>
                 </div>}>            
               </Route>
               {/* MUestra el producto seleccionado */}
@@ -55,7 +55,7 @@ function App() {
               </Route>
               <Route path='/enCamino' element={
                 <div className='container box glowing'>
-                  <ProdsInComing/>
+                  <ProdsEnCamino/>
                 </div>}>          
               </Route>   
                 

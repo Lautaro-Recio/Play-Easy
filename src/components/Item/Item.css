@@ -59,3 +59,34 @@
     text-align: center;
     padding: 15px;
 }
+.cardsPc{
+    height: auto;
+    width: 200px;
+    background-color: rgb(145, 145, 145);
+    border: 3px solid black;
+    border-radius: 15px ;
+    text-align: center;
+    padding: 15px;
+}
+.logoPc{
+    width: 80%;
+    height: 40px;
+    border: 3px solid rgb(145, 145, 145);
+    background-color: rgb(145, 145, 145);
+}
+
+.cardsComplementos{
+    height: auto;
+    width: 200px;
+    background-color: rgb(94, 0, 172);
+    border: 3px solid black;
+    border-radius: 15px ;
+    text-align: center;
+    padding: 15px;
+}
+.logoComplementos{
+    width: 80%;
+    height: 40px;
+    border: 3px solid rgb(94, 0, 172);
+    background-color: rgb(94, 0, 172);
+}

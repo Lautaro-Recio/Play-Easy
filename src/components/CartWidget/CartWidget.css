@@ -9,4 +9,8 @@
 }
 .cartP{
     color: black;
+    display: contents;
+    background-color: white;
+    border: 1px black solid;
+    border-radius: 3px;
 }

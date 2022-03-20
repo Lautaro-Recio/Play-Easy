@@ -17,8 +17,11 @@ const CartContextProvider = ({children}) =>{
     const [totalPrice,setTotalprice]= useState(0)
     const [idCompra,setIdCompra]= useState("")
     const [compraHecha,setCompraHecha]= useState(false)
-    const direccionChange = event => setDireccion(event.target.value)
+    const [filtro, setFiltro] = useState("")
     const [cart, setCart] =useState([]);
+
+    const filtroOnChange = event => setFiltro(event.target.value)
+    const direccionChange = event => setDireccion(event.target.value)
     const addCart=(cantidad,item)=>{
         if(isOnCart(item.id)){
             sumarCantidad(cantidad,item)
@@ -101,7 +104,6 @@ const CartContextProvider = ({children}) =>{
             const copia4 = [...cart]
             copia4.forEach(element => {
                 const id = element.id
-                console.log(element.stock)
                 const stockOfDatabase=element.stock
                 const docRef = doc(dataBase,"items",id)
                 updateDoc(docRef,{stock:stockOfDatabase-element.cantidad})
@@ -117,7 +119,7 @@ const CartContextProvider = ({children}) =>{
 
 
     return( 
-        <CartContext.Provider value={{compraHecha,idCompra,totalPrice,cart,addCart,clearCart, removeItem,boughtCart,checkOut,direccion,direccionChange,check,totalProds}}>
+        <CartContext.Provider value={{filtroOnChange,filtro,setFiltro,compraHecha,idCompra,totalPrice,cart,addCart,clearCart, removeItem,boughtCart,checkOut,direccion,direccionChange,check,totalProds}}>
             {children}
         </CartContext.Provider>
     )

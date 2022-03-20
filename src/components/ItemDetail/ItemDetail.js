@@ -9,7 +9,7 @@ import { CartContext } from "../context/CartContext"
 
 export default function ItemDetail({products}){
     const [cantidad, setCantidad] = useState()
-    const {cart,addCart} = useContext(CartContext)
+    const {addCart} = useContext(CartContext)
     
     /* Agregar al carrito */
     function onAddToCart(cantidad){
@@ -44,7 +44,7 @@ export default function ItemDetail({products}){
                         </div>
                     </div>
                 </>
-            ):(
+            ):products.plataforma === "ps" ?(
                 <>
                     <div key={products.id} className=' divCards'>
                         <div className="cardsDetailPlay">
@@ -69,6 +69,55 @@ export default function ItemDetail({products}){
                         </div>
                     </div>
                 </>
+            ):products.plataforma === "pc" ?(
+                <>
+                    <div key={products.id} className=' divCards'>
+                        <div className="cardsDetailPc">
+                            <div>
+                                <img className='logoPc' src={products.console} />
+                                <img className='imgsProds' src={products.img} alt={products.title} />
+                            </div>
+                            <p>$ {products.price}</p> 
+                            {/* Cuando se añada un products al carrito ItemCount desaparece */}
+
+                            {
+                                ! cantidad ? 
+                                <ItemCount initial={1} stock={products.stock} onAdd={onAddToCart} />:
+                                <Link to='/cart'> <button className='botonCard'>Ir al carrito</button></Link>
+                            }   
+                        
+                        </div>
+                        <div className="detallePc">
+                            <h4>{products.title}</h4>   
+                            <p>{products.description}</p>
+                            <p>Edad minima {products.edad}</p>
+                        </div>
+                    </div>
+                </>
+            ):(
+                <>
+                <div key={products.id} className=' divCards'>
+                    <div className="cardsDetailComplementos">
+                        <div>
+                            <img className='logoComplementos' src={products.console} />
+                            <img className='imgsProds' src={products.img} alt={products.title} />
+                        </div>
+                        <p>$ {products.price}</p> 
+                        {/* Cuando se añada un products al carrito ItemCount desaparece */}
+
+                        {
+                            ! cantidad ? 
+                            <ItemCount initial={1} stock={products.stock} onAdd={onAddToCart} />:
+                            <Link to='/cart'> <button className='botonCard'>Ir al carrito</button></Link>
+                        }   
+                    
+                    </div>
+                    <div className="detalleComponentes">
+                        <h4>{products.title}</h4>   
+                        <p>{products.description}</p>
+                    </div>
+                </div>
+            </>
             )
                 
             }
