@@ -36,7 +36,7 @@
 }
 .cardsPlay{
     height: auto;
-    width: 200px;
+    width: 250px;
     background-color: blue;
     border: 3px solid black;
     border-radius: 15px ;
@@ -52,7 +52,7 @@
 }
 .cardsXbox{
     height: auto;
-    width: 200px;
+    width: 250px;
     background-color: rgb(39, 168, 27);
     border: 3px solid black;
     border-radius: 15px ;
@@ -61,7 +61,7 @@
 }
 .cardsPc{
     height: auto;
-    width: 200px;
+    width: 250px;
     background-color: rgb(145, 145, 145);
     border: 3px solid black;
     border-radius: 15px ;
@@ -77,7 +77,7 @@
 
 .cardsComplementos{
     height: auto;
-    width: 200px;
+    width: 250px;
     background-color: rgb(94, 0, 172);
     border: 3px solid black;
     border-radius: 15px ;

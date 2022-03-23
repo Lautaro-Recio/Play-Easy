@@ -50,3 +50,11 @@
 .loader{
     margin: 0% 45%
 }
+.divItemsContainer{
+    margin-left: 3%;
+    text-align: left;
+}
+.divItemsContainer h4{
+    margin: 2% 0%;
+    font-size: 30px;
+}

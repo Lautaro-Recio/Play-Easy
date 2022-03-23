@@ -11,7 +11,6 @@ export default function ItemDetail({products}){
     const [cantidad, setCantidad] = useState()
     const {addCart} = useContext(CartContext)
     
-    /* Agregar al carrito */
     function onAddToCart(cantidad){
         setCantidad(cantidad)
         addCart(cantidad,products)

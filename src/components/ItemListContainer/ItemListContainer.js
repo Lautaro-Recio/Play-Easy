@@ -26,7 +26,7 @@ function ItemListContainer({greetings}){
     
     
     return(
-        <div>
+        <div className='divItemsContainer'>
             <h3>{greetings}</h3>
             {products.length > 0 ? <ItemList key={products.id} products={products}/> : <div className='loader'></div>}
         </div>

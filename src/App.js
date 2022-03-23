@@ -7,7 +7,7 @@ import Cart from './components/Cart/cart'
 import AddItemContainer from './components/AddItemContainer/AddItemContainer'
 import NewUsserContainer from './components/NewUsserContainer/NewUsserContainer';
 import ProdsEnCamino from './components/ProdsEnCamino/ProdsEnCamino';
-
+import Swipper from './components/Swipper/Swipper';
 
 function App() {
   
