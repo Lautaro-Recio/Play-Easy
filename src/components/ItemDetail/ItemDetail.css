@@ -1,13 +1,3 @@
-.cardsDetail{
-    height: auto;
-    width: 100%;
-    background-color: #0d295e;
-    border: 3px solid black;
-    border-radius: 15px ;
-    text-align: center;
-    padding: 15px;
-
-}
 
 .detallePlay{
     width: 100%;
@@ -48,19 +38,19 @@
     color: white;
     margin: 1%;
 }
-.detallePlay p, .detallePlay p, .detallePc p, .detalleComplementos p{
+.detallePlay p, .detallePlay p, .detallePc p, .detalleComponentes p{
     font-size: 18px;
     color: white;
-    padding: 0% 5%;
     margin: 5%;
-    padding: 50px;
+    padding: 10px;
+    font-weight: normal;
 }
 
 .cards p{
     color: black;
 }
 .cardsDetailPlay{
-    height: auto;
+    height: 550px;
     width: 28%;
     background-color: blue;
     border: 3px solid black;
@@ -70,7 +60,7 @@
 }
 
 .cardsDetailXbox{
-    height: auto;
+    height: 550px;
     width: 28%;
     background-color: rgb(39, 168, 27);
     border: 3px solid black;
@@ -79,7 +69,7 @@
     padding: 15px;
 }
 .cardsDetailPc{
-    height: auto;
+    height: 550px;
     width: 28%;
     background-color: rgb(145, 145, 145);
     border: 3px solid black;
@@ -95,7 +85,7 @@
 }
 
 .cardsDetailComplementos{
-    height: auto;
+    height: 550px;
     width: 28%;
     background-color: rgb(94, 0, 172);
     border: 3px solid black;

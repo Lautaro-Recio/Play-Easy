@@ -10,7 +10,7 @@ import basurero from '../../assets/imgs/basurero.png'
 
 
 export default function Cart(){
-    const {cart,clearCart, removeItem,boughtCart,checkOut,direccion,direccionChange,check} = useContext(CartContext)
+    const {cart,clearCart, removeItem,boughtCart,checkOut,direccion,direccionChange,check,filtro} = useContext(CartContext)
 
     const defaultOptions = {
         loop: true,
@@ -37,6 +37,7 @@ export default function Cart(){
             setTotalprice(total)
         });
     },[cart])
+   
     
     return (
         <>
@@ -73,7 +74,7 @@ export default function Cart(){
                                                 <button className='removeItem' onClick={()=>removeItem(producto.id)} ><img src={basurero} alt="Basurero" /></button>                        
                                             </div>                              
                                         </div>
-                                    ):(
+                                    ): producto.plataforma === "ps" ?(
                                         <div className='divCartPlay' key={producto.id}>
                                         <img src={producto.img} alt={producto.title} />
                                         <div>
@@ -92,8 +93,48 @@ export default function Cart(){
                                             <button className='removeItem' onClick={()=>removeItem(producto.id)} ><img src={basurero} alt="Basurero" /></button>                        
                                         </div>                              
                                     </div> 
+                                    ): producto.plataforma === "pc" ?(
+                                        <div className='divCartPc' key={producto.id}>
+                                        <img src={producto.img} alt={producto.title} />
+                                        <div>
+                                            <p>{producto.title}</p>
+                                        </div>
+                                        <div>
+                                            <p>$ {producto.price*producto.cantidad}</p>
+                                        </div>
+                                        <div>
+                                            <p>Edad minima: {producto.edad}</p>   
+                                        </div>
+                                        <div>
+                                            <p>Cantidad: {producto.cantidad}</p>
+                                        </div>
+                                        <div>
+                                            <button className='removeItem' onClick={()=>removeItem(producto.id)} ><img src={basurero} alt="Basurero" /></button>                        
+                                        </div>                              
+                                    </div> 
+                                    ):(
+                                        <div className='divCartComplementos' key={producto.id}>
+                                        <img src={producto.img} alt={producto.title} />
+                                        <div>
+                                            <p>{producto.title}</p>
+                                        </div>
+                                        <div>
+                                            <p>$ {producto.price*producto.cantidad}</p>
+                                        </div>
+                                        <div>
+                                            <p>Edad minima: {producto.edad}</p>   
+                                        </div>
+                                        <div>
+                                            <p>Cantidad: {producto.cantidad}</p>
+                                        </div>
+                                        <div>
+                                            <button className='removeItem' onClick={()=>removeItem(producto.id)} ><img src={basurero} alt="Basurero" /></button>                        
+                                        </div>                              
+                                    </div> 
+
                                     )
                             )
+                            
                         
                             
                         })}

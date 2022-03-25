@@ -1,6 +1,24 @@
 .divGeneral{
     padding: 1px 5% ;
 }
+.divCartPc{
+    margin: 50px 0px;
+    border-radius: 15px;
+    display: flex;
+    background-color: rgb(145, 145, 145);
+    border-left: rgb(92, 92, 92) 10px solid;
+    border-bottom: rgba(80, 80, 80, 0.904) 1px solid;
+    border-right: rgba(80, 80, 80, 0.904) 1px solid;
+}
+.divCartComplementos {
+    margin: 50px 0px;
+    border-radius: 15px;
+    display: flex;
+    background-color: rgb(94, 0, 172);
+    border-left: rgb(57, 0, 104) 10px solid;
+    border-bottom: rgba(80, 80, 80, 0.904) 1px solid;
+    border-right: rgba(80, 80, 80, 0.904) 1px solid;
+}
 .divCartPlay{
     margin: 50px 0px;
     border-radius: 15px;
@@ -19,11 +37,11 @@
     border-bottom: rgba(80, 80, 80, 0.904) 1px solid;
     border-right: rgba(80, 80, 80, 0.904) 1px solid;
 }
-.divCartXbox div, .divCartPlay div{
+.divCartXbox div, .divCartPlay div, .divCartPc div, .divCartComplementos div{
     width: 100%;
 }
 
-.divCartXbox p, .divCartPlay p {
+.divCartXbox p, .divCartPlay p, .divCartPc p, .divCartComplementos p {
     color: white;
     justify-content: center;
     text-align: center;
@@ -31,7 +49,7 @@
     margin-top:15% ;
 }
 
-.divCartXbox img, .divCartPlay img{
+.divCartXbox img, .divCartPlay img, .divCartPc img, .divCartComplementos img {
     width: 10%;
     height: 10%;
     padding: 15px;

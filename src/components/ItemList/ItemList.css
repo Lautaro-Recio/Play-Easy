@@ -1,5 +1,22 @@
 .swiper{
-    margin-right:4%;
-    margin-left:4%;
+    height: 510px;
 
+}
+.swiper-pagination{
+    margin:30px 20px 0px 0px;
+    height: 50px;
+
+}
+.swiper-pagination-bullet{
+    width: 20px !important;
+    height: 20px !important;
+    background: aliceblue !important;
+}
+.swiper-button-prev , .swiper-button-next{
+    margin-top: 200px !important;
+    z-index: 11 !important;
+}
+.gamingFont{
+    font-family: 'Orbitron', sans-serif;
+  
 }

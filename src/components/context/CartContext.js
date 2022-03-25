@@ -22,6 +22,7 @@ const CartContextProvider = ({children}) =>{
 
     const filtroOnChange = event => setFiltro(event.target.value)
     const direccionChange = event => setDireccion(event.target.value)
+    
     const addCart=(cantidad,item)=>{
         if(isOnCart(item.id)){
             sumarCantidad(cantidad,item)

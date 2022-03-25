@@ -14,7 +14,7 @@ const UsserLogueado =() =>{
         <div className="usser">
            
                 <img src={photoURL} alt="Avatar" />
-                <p>{displayName}</p>
+                <p className="usserP">{displayName}</p>
             
             <SignOut/>
         </div>

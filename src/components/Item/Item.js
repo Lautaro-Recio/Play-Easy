@@ -1,6 +1,5 @@
 import './Item.css'
 import { Link } from 'react-router-dom'
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function Item({Item}){
     

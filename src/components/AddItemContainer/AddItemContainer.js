@@ -95,6 +95,7 @@ export default function AddItemContainer () {
                     <input name='file' type='file' onChange={imgChange }/>
                 </div> 
                 <button type='submit' onClick={onSubmit}>Enviar</button>
+                <button type='reset'>Limpiar</button>
             </form>
         </div>
     )

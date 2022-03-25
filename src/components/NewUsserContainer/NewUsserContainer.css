@@ -1,7 +1,7 @@
 .ingresar{
     display: flex;
     height: 50px;
-    width: 200px;
+    width: 260px;
     justify-content: end;
     border-radius: 35px;
     border-color: black 5px solid;
@@ -13,7 +13,7 @@
     margin-top: 5px;
 }
 .ingresar p{
-    width: 150px;
+    width: 250px;
     color: black;
 }
 .UsserDiv{

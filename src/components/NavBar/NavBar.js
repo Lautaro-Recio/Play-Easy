@@ -34,7 +34,7 @@ export default function NavBar (){
         <div>
             <ul>
                 <NavLink to="/"><img src={logo} alt="Logo Play Easy" /></NavLink>
-                <input type="text" value={filtro} onChange={filtroOnChange}  />   
+                <input type="text" value={filtro} onChange={filtroOnChange} placeholder="Busca aqui tu producto"  />   
                 <li className='botonSub'>
                     <NavLink to="/">Productos</NavLink>
                     <SubMenu/>
